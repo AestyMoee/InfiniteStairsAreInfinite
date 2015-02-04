@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof (AudioSource))]
+
 public class CharacterManager : MonoBehaviour {
 
 	private Animator animStairs, animTrigger;
 	private AudioSource audioSource;
+	private Light torche;
 
 	public AudioClip[] sndListStep;
 
@@ -17,10 +20,23 @@ public class CharacterManager : MonoBehaviour {
 
 	void Start(){
 		audioSource = GetComponent<AudioSource> ();
+
+		animStairs = GameObject.Find ("stairs").GetComponent<Animator> ();
+		animTrigger = GameObject.Find ("trigger").GetComponent<Animator> ();
+
+		torche = GetComponentInChildren<Light> ();
 	}
 
 	void Update() {
 		moveCharacter ();
+
+		if (Input.GetKeyDown (KeyCode.F)) {
+			torche.enabled = !torche.enabled;
+		}
+
+		if(Input.GetKeyDown(KeyCode.E)){
+			StartCoroutine("actionCharacter");
+		}
 	}
 
 	void moveCharacter(){
@@ -52,6 +68,12 @@ public class CharacterManager : MonoBehaviour {
 		}
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move (moveDirection * Time.deltaTime);
-		}
+	}
+
+	IEnumerator actionCharacter(){
+		animTrigger.Play ("Actived");
+		yield return new WaitForSeconds(3f);
+		animStairs.Play ("Up");
+	}
 
 }
