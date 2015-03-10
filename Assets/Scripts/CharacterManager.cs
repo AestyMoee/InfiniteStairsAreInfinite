@@ -4,8 +4,6 @@ using System.Collections;
 [RequireComponent(typeof (AudioSource))]
 
 public class CharacterManager : MonoBehaviour {
-
-	private Animator animStairs, animTrigger;
 	private AudioSource audioSource;
 	private Light torche;
 
@@ -13,16 +11,12 @@ public class CharacterManager : MonoBehaviour {
 
 	public float speedRun = 6.0F;
 	public float speedWalk = 2.0F;
-	public float jumpSpeed = 8.0F;
 	public float gravity = 20.0F;
 	private Vector3 moveDirection = Vector3.zero;
 	private float timeBetweenStep;
 
 	void Start(){
 		audioSource = GetComponent<AudioSource> ();
-
-		animStairs = GameObject.Find ("stairs").GetComponent<Animator> ();
-		animTrigger = GameObject.Find ("trigger").GetComponent<Animator> ();
 
 		torche = GetComponentInChildren<Light> ();
 	}
@@ -32,10 +26,7 @@ public class CharacterManager : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.F)) {
 			torche.enabled = !torche.enabled;
-		}
-
-		if(Input.GetKeyDown(KeyCode.E)){
-			StartCoroutine("actionCharacter");
+			torche.GetComponent<AudioSource>().Play();
 		}
 	}
 
@@ -62,18 +53,10 @@ public class CharacterManager : MonoBehaviour {
 			}
 			moveDirection = transform.TransformDirection (moveDirection);
 			moveDirection *= speed;
-			if (Input.GetButton ("Jump"))
-				moveDirection.y = jumpSpeed;
 
 		}
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move (moveDirection * Time.deltaTime);
-	}
-
-	IEnumerator actionCharacter(){
-		animTrigger.Play ("Actived");
-		yield return new WaitForSeconds(3f);
-		animStairs.Play ("Up");
 	}
 
 }
