@@ -34,9 +34,15 @@ public class CharacterManager : MonoBehaviour {
 		float speed;
 
 		if (Input.GetKey (KeyCode.LeftShift))
-			speed = speedWalk;
-		else
-			speed = speedRun;
+        {
+            speed = speedRun;
+            audioSource.volume = 0.3f;
+        }
+        else
+        {
+            speed = speedWalk;
+            audioSource.volume = 0.1f;
+        }
 
 		CharacterController controller = GetComponent<CharacterController> ();
 		if (controller.isGrounded) {

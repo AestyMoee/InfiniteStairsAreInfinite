@@ -13,7 +13,8 @@ public class EscalierScript : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            animatedStairs.Play("EscalierDescente");
+            Debug.Log("test");
+            animatedStairs.Play("AnimEscalier");
         }
     }
 }
