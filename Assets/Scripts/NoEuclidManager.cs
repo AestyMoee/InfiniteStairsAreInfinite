@@ -3,20 +3,28 @@ using System.Collections;
 
 public class NoEuclidManager : MonoBehaviour {
 
-    private int compteur = 0;
+    private int compteur = 0; //On peut rajouter des effets à chaque tour
+    private Light[] allLight;
+    private bool icecream1 = false; //iceCream iScream HaHa !! //On prévoit le coup pour rajouter d'autres trucs ;)
 
-    private bool icecream1 = false; //iceCream iScream HaHa !!
+    void Start()
+    {
+        allLight = FindObjectsOfType<Light>();
+    }
 
     void Update()
     {
         if (compteur == 2 && !icecream1)
         {  
             icecream1 = true;
-            Light[] allLight = FindObjectsOfType<Light>();
-
+            
             foreach(Light l in allLight){
                 l.enabled = false;
             }
+
+            audio.Play();
+            StartCoroutine("LightOn");
+            
         }
     }
 
@@ -26,5 +34,14 @@ public class NoEuclidManager : MonoBehaviour {
         compteur++;
 	}
 
+
+    IEnumerator LightOn()
+    {
+        yield return new WaitForSeconds(2.0f);
+        foreach (Light l in allLight)
+        {
+            l.enabled = true;
+        }
+    }
 
 }

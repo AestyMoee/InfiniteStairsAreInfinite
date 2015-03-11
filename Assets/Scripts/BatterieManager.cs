@@ -51,6 +51,11 @@ public class BatterieManager : MonoBehaviour {
             fill.color = Color.white;
 
         if (batterie.value == 0)
+        {
             torche.enabled = false;
+            torche.GetComponent<AudioSource>().Play();
+            batterie.value = 0.01f;
+        }
+            
 	}
 }
