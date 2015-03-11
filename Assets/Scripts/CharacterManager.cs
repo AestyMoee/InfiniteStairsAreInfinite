@@ -5,7 +5,6 @@ using System.Collections;
 
 public class CharacterManager : MonoBehaviour {
 	private AudioSource audioSource;
-	private Light torche;
 
 	public AudioClip[] sndListStep;
 
@@ -17,17 +16,10 @@ public class CharacterManager : MonoBehaviour {
 
 	void Start(){
 		audioSource = GetComponent<AudioSource> ();
-
-		torche = GetComponentInChildren<Light> ();
 	}
 
 	void Update() {
 		moveCharacter ();
-
-		if (Input.GetKeyDown (KeyCode.F)) {
-			torche.enabled = !torche.enabled;
-			torche.GetComponent<AudioSource>().Play();
-		}
 	}
 
 	void moveCharacter(){
