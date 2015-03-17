@@ -1,0 +1,11 @@
+Note : Traitement des images sous GIMP.
+
+1 : Vision wireframe et solid, et texturing de l'asset 3D modulaire "couloirDroit".
+2 : Rendu de l'asset "couloirDroit".
+2': Rendu de l'asset "couloirDroit". Pour ce rendu, plusieurs "couloirDroit" ont été dupliqués et mis bout à bout.
+3 : Fondu entre la vision wireframe et le texturing de l'asset 3D modulaire "couloirCoude".
+4 : Rendu de l'asset "couloirCoude".
+5 : Fondu entre la vision wireframe et le texturing de l'asset 3D modulaire "couloirEscalier".
+6 : Fondu entre la vision wireframe et le texturing de l'asset 3D modulaire "escalier".
+		Cet asset est composé de plusieurs marches indépendants. L'animation de chaque marche permet d'abaisser l'escalier à l'approche du joueur. L'animation est réalisée dans Unity.
+7 : Rendu des assets "couloirEscalier" et "escalier".

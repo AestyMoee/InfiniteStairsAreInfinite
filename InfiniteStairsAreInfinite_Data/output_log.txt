@@ -18,7 +18,15 @@ Platform assembly: C:\Users\Vincent\Documents\GitHub\InfiniteStairsAreInfinite\I
 Loading C:\Users\Vincent\Documents\GitHub\InfiniteStairsAreInfinite\InfiniteStairsAreInfinite_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: C:\Users\Vincent\Documents\GitHub\InfiniteStairsAreInfinite\InfiniteStairsAreInfinite_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Vincent\Documents\GitHub\InfiniteStairsAreInfinite\InfiniteStairsAreInfinite_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.132 seconds
-desktop: 1366x768 60Hz; virtual: 2646x1024 at 0,0
+- Completed reload, in  0.107 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
+Platform assembly: C:\Users\Vincent\Documents\GitHub\InfiniteStairsAreInfinite\InfiniteStairsAreInfinite_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Vincent\Documents\GitHub\InfiniteStairsAreInfinite\InfiniteStairsAreInfinite_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 3.567906 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4689.
+Total: 1.333397 ms (FindLiveObjects: 0.206085 ms CreateObjectMapping: 0.022168 ms MarkObjects: 0.375633 ms  DeleteObjects: 0.228254 ms)
+
